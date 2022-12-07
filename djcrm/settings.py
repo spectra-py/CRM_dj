@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,10 +53,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'djcrm.urls'
 
+
+#START:: Added manually
+SETTINGS_PATH = os.path.dirname(os.path.dirname('_templates/'))
+#END:: Added manually
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR , '_templates/' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
