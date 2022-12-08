@@ -4,9 +4,9 @@ from .import views
 
 urlpatterns = [
     
-    path('leads-list/', views.lead_list , name = "leads_list" ),
+    path('leads-list/', views.LeadListView.as_view() , name = "leads_list" ),
     path('<int:id>/', views.lead_detail , name = "detail" ),
-    path('lead-create/', views.lead_create , name = "lead-create" ),
-    path('update/<int:id>/', views.lead_update , name = "lead-update" ),
+    path('lead-create/', views.LeadCreateView.as_view() , name = "lead-create" ),
+    path('update/<slug:pk>/', views.LeadUpdateView.as_view() , name = "lead-update" ),
     path('delete/<int:id>/', views.lead_delete , name = "lead-delete" ),
 ]
