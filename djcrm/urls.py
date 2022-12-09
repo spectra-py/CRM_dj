@@ -25,6 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPageView.as_view() , name = 'landing-page' ),
     path('leads/', include('leads.urls'),name= 'leads'),
+    path('api-auth/', include('rest_framework.urls')),
+    path('auth/', include('auth.urls')),
+    
    
 ]
 
